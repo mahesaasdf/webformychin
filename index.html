@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Website for You</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  <body>
+    <!-- Section 1: Welcome and Yes/No Option -->
+    <section id="section1">
+      <div class="content">
+        <h1>Welcome, My Love! 💖</h1>
+        <p>Haii chintyaa, aku kangen nih. Kamu mau liat-liat sebentar gaa?</p>
+        <button class="option-btn" onclick="nextSection('yes')">mauuu saa</button>
+        <button class="option-btn" onclick="nextSection('no')">gamau ah aku maless</button>
+      </div>
+      <div id="no-message" class="hidden">
+        <p>That's okay! I still love you anyway! 💖</p>
+        <img src="img/lovely-gif.gif" alt="Cute animation" class="no-image" />
+        <button class="back-btn" onclick="goBackToFirst()">Back</button>
+      </div>
+    </section>
+
+    <!-- Section 2: Find the Heart Game -->
+    <section id="section2" style="display: none">
+      <h2>Find the Hidden Heart! 💘</h2>
+      <div id="heartGame">
+        <p>Sayangg, coba cari lovee yang beneran diantara ini WKWKW</p>
+        <div class="game-grid">
+          <img src="img/yellowheart.png" alt="fake-heart" onclick="wrongClick()" width="110" height="110" />
+          <img src="img/yellowheart.png" alt="fake-heart" onclick="wrongClick()" width="110" height="110" />
+          <img src="img/yellowheart.png" alt="real-heart" onclick="correctClick()" width="110" height="110" />
+          <img src="img/yellowheart.png" alt="fake-heart" onclick="wrongClick()" width="110" height="110" />
+          <img src="img/yellowheart.png" alt="fake-heart" onclick="wrongClick()" width="110" height="110" />
+          <img src="img/yellowheart.png" alt="fake-heart" onclick="wrongClick()" width="110" height="110" />
+        </div>
+        <button class="back-btn" onclick="backToSection1()">males ah balik lagi aja</button>
+      </div>
+    </section>
+
+    <!-- Section 3: Flip the Pieces -->
+    <section id="section3" style="display: none">
+      <h2>Flip the Pieces, sayang! 📸</h2>
+      <p>Nahh coba balik satu per satu gambarnya hehe</p>
+      <div id="puzzleGame" class="flip-container">
+        <!-- Piece 1 -->
+        <div class="flip-item" id="piece1" onclick="flipPiece(this)">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/chin1.gif" alt="Piece 1 Front" />
+            </div>
+            <div class="flip-back">
+              <img src="img/chinb1.gif" alt="Piece 1 Back" />
+            </div>
+          </div>
+        </div>
+        <!-- Piece 2 -->
+        <div class="flip-item" id="piece2" onclick="flipPiece(this)">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/chin2.gif" alt="Piece 2 Front" />
+            </div>
+            <div class="flip-back">
+              <img src="img/chinb2.gif" alt="Piece 2 Back" />
+            </div>
+          </div>
+        </div>
+        <!-- Piece 3 -->
+        <div class="flip-item" id="piece3" onclick="flipPiece(this)">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/chin3.gif" alt="Piece 3 Front" />
+            </div>
+            <div class="flip-back">
+              <img src="img/chinb3.gif" alt="Piece 3 Back" />
+            </div>
+          </div>
+        </div>
+        <!-- Piece 4 -->
+        <div class="flip-item" id="piece4" onclick="flipPiece(this)">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/chin4.gif" alt="Piece 4 Front" />
+            </div>
+            <div class="flip-back">
+              <img src="img/chinb4.gif" alt="Piece 4 Back" />
+            </div>
+          </div>
+        </div>
+        <!-- Piece 5 -->
+        <div class="flip-item" id="piece5" onclick="flipPiece(this)">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/chin5.gif" alt="Piece 5 Front" />
+            </div>
+            <div class="flip-back">
+              <img src="img/chinb5.gif" alt="Piece 5 Back" />
+            </div>
+          </div>
+        </div>
+        <!-- Piece 6 -->
+        <div class="flip-item" id="piece6" onclick="flipPiece(this)">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/chin6.gif" alt="Piece 6 Front" />
+            </div>
+            <div class="flip-back">
+              <img src="img/chinb6.gif" alt="Piece 6 Back" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="next-btn" class="hidden" onclick="goToSection4()">Lanjut dehhh</button>
+      <button class="back-btn" onclick="backToSection2()">Males ah balik lagi aja</button>
+    </section>
+
+    <!-- Section 4: Love Meter -->
+    <section id="section4" style="display: none">
+      <h2>Love Meter 💕</h2>
+      <div id="loveMeter" style="width: 100%; height: 50px; background-color: #e6e6e6; border-radius: 25px">
+        <div id="meterFill" style="width: 0%; height: 100%; background-color: #ff6699; border-radius: 25px"></div>
+      </div>
+      <p id="loveDescription">Geser meter untuk mengetahui seberapa besar cintamu!</p>
+      <button class="back-btn" onclick="backToSection3()">Kembali</button>
+    </section>
+
+    <!-- Section 5: One Year Anniversary -->
+    <section id="section5" style="display: none">
+      <h2>Happy 1 Year Anniversary! 🎉</h2>
+      <p>Selamat sayang, sudah 1 tahun kita bersama! Semoga kita terus bahagia dan banyak hal baik ke depannya. Aku sangat mencintaimu!</p>
+      <button class="back-btn" onclick="goBackToSection4()">Kembali ke Love Meter</button>
+    </section>
+
+    <!-- JavaScript file -->
+    <script src="js.js"></script>
+  </body>
+</html>

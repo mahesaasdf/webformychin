@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffe6f0;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  color: #ff6699;
+}
+
+button {
+  background-color: #ff6699;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ff3366;
+}
+
+.option-btn,
+.back-btn,
+.drag-btn {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-image {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.puzzle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.puzzle-container img {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.flip-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Tiga kolom */
+  grid-template-rows: repeat(3, 1fr); /* Dua baris */
+  gap: 0px; /* Jarak antar potongan */
+  justify-items: center; /* Menyelaraskan potongan gambar di tengah-tengah grid */
+  align-items: center; /* Menyelaraskan potongan gambar di tengah-tengah grid secara vertikal */
+}
+
+.flip-item {
+  width: 325px; /* Sesuaikan dengan ukuran potongan gambar */
+  height: 385px; /* Sesuaikan dengan ukuran potongan gambar */
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-item.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-front {
+  background-color: #fff;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.flip-item.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+#loveMeter {
+  position: relative;
+  cursor: pointer;
+}
+
+#meterFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #ff6699;
+  transition: width 0.1s ease;
+}
